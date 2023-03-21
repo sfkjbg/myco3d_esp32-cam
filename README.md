@@ -195,3 +195,4 @@ void saveImageToSDCard(camera_fb_t *fb, const char *filename) {
 }
 
 ```
+other
