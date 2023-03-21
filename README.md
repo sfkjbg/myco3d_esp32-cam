@@ -1,4 +1,4 @@
-'''python
+```python
 
 
 Title: Comprehensive ESP32-Camera Module Manual and Shortcuts
