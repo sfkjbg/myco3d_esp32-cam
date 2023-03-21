@@ -1,4 +1,3 @@
-```python
 
 
 Title: Comprehensive ESP32-Camera Module Manual and Shortcuts
@@ -38,7 +37,7 @@ Table of Contents:
 
 6.1. Camera Configuration
 Camera settings such as resolution, format, and quality can be adjusted using the camera configuration structure. The following example demonstrates how to set up a basic camera configuration in Arduino IDE:
-
+```python
 #include "esp_camera.h"
 
 camera_config_t config;
@@ -75,8 +74,7 @@ void setupCamera() {
 	return;
   }
 }
-
-
+```
 - config.pixel_format: Set the pixel format (e.g., PIXFORMAT_JPEG, PIXFORMAT_RGB888, PIXFORMAT_GRAYSCALE).
 - config.frame_size: Set the frame size (e.g., FRAMESIZE_QVGA, FRAMESIZE_VGA, FRAMESIZE_SVGA).
 - config.jpeg_quality: Set the JPEG quality (1-63, lower values mean higher quality and larger image size).
@@ -91,25 +89,34 @@ void setupCamera() {
 To use face recognition and detection, the dl_lib.h library and a pre-trained model are required. Follow these steps to implement basic face recognition:
 
 1. Include the necessary libraries:
+```
 #include "esp_camera.h"
 #include "fd_forward.h"
 #include "fr_forward.h"
 #include "dl_lib.h"
+```
 
 2. Initialize the face detection and recognition models:
+```
 mtmn_config_t mtmn_config
+```
 
 
 
 1. Include the necessary libraries:
+```
 #include "esp_camera.h"
 #include "fd_forward.h"
 #include "fr_forward.h"
 #include "dl_lib.h"
+```
+
 
 2. Initialize the face detection and recognition models:
+```
 mtmn_config_t mtmn_config = mtmn_init_config();
 dl_matrix3du_t *aligned_face = dl_matrix3du_alloc(1, FACE_WIDTH, FACE_HEIGHT, 3);
+
 
 face_id_list_init(&id_list, FACE_ID_SAVE_NUMBER, FACE_WIDTH, FACE_HEIGHT);
 
@@ -118,9 +125,9 @@ face_detection_init("fd_forward");
 
 // Load the face recognition model
 face_recognition_init("fr_forward");
-
+```
 3. Capture an image and perform face detection:
-
+```
 camera_fb_t *fb = esp_camera_fb_get();
 
 if (!fb) {
@@ -136,8 +143,9 @@ if (!net_boxes) {
   Serial.printf("Detected %d faces\n", net_boxes->len);
 }
 
+```
 4. Perform face recognition on the detected faces:
-
+```
 for (int i = 0; i < net_boxes->len; i++) {
   fptp_t similarity = {0};
 
@@ -153,13 +161,13 @@ for (int i = 0; i < net_boxes->len; i++) {
 	Serial.printf("Face not recognized, similarity: %f\n", similarity);
   }
 }
-
+```
 5. Don't forget to release the allocated resources after use:
-
+```
 dl_matrix3du_free(aligned_face);
 free(net_boxes);
 esp_camera_fb_return(fb);
-
+```
 
 
 6. Saving Images to SD Card
@@ -167,11 +175,12 @@ esp_camera_fb_return(fb);
 To save images to an SD card, follow these steps:
 
 1. Include the necessary libraries:
+```
 #include "FS.h"
 #include "SD_MMC.h"
-
+```
 2. Initialize the SD card:
-
+```
 void setupSDCard() {
   if (!SD_MMC.begin()) {
 	Serial.println("Failed to initialize SD card");
@@ -179,9 +188,10 @@ void setupSDCard() {
   }
   Serial.println("SD card initialized");
 }
+```
 
 3. Save the captured image to the SD card:
-
+```
 void saveImageToSDCard(camera_fb_t *fb, const char *filename) {
   File file = SD_MMC.open(filename, FILE_WRITE);
 
