@@ -35,7 +35,7 @@ Table of Contents:
 
 6.1. Camera Configuration
 Camera settings such as resolution, format, and quality can be adjusted using the camera configuration structure. The following example demonstrates how to set up a basic camera configuration in Arduino IDE:
-
+'''
 #include "esp_camera.h"
 
 camera_config_t config;
@@ -149,6 +149,7 @@ for (int i = 0; i < net_boxes->len; i++) {
 	Serial.printf("Face not recognized, similarity: %f\n", similarity);
   }
 }
+'''
 
 5. Don't forget to release the allocated resources after use:
 
