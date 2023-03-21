@@ -36,7 +36,7 @@ Table of Contents:
 6.1. Camera Configuration
 Camera settings such as resolution, format, and quality can be adjusted using the camera configuration structure. The following example demonstrates how to set up a basic camera configuration in Arduino IDE:
 
-'''python
+```python
 #include "esp_camera.h"
 
 camera_config_t config;
@@ -73,7 +73,7 @@ void setupCamera() {
 	return;
   }
 }
-'''
+```
 
 - config.pixel_format: Set the pixel format (e.g., PIXFORMAT_JPEG, PIXFORMAT_RGB888, PIXFORMAT_GRAYSCALE).
 - config.frame_size: Set the frame size (e.g., FRAMESIZE_QVGA, FRAMESIZE_VGA, FRAMESIZE_SVGA).
