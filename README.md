@@ -73,6 +73,7 @@ void setupCamera() {
 	return;
   }
 }
+'''
 
 - config.pixel_format: Set the pixel format (e.g., PIXFORMAT_JPEG, PIXFORMAT_RGB888, PIXFORMAT_GRAYSCALE).
 - config.frame_size: Set the frame size (e.g., FRAMESIZE_QVGA, FRAMESIZE_VGA, FRAMESIZE_SVGA).
