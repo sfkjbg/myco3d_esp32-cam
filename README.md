@@ -123,7 +123,7 @@ In this guide, you've learned how to set up the hardware and software for the ES
 
 
 
-
+<!-- 
 
 ####################### 
 
@@ -331,4 +331,4 @@ void saveImageToSDCard(camera_fb_t *fb, const char *filename) {
   file.close();
 }
 
-```
+``` -->
