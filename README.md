@@ -44,8 +44,7 @@ Note: During normal operation, the ESP32-CAM module requires a stable 5V power s
     Open the Arduino IDE and go to File > Preferences. In the "Additional Boards Manager URLs" field, add the following URL:
 
 
-    ```https://dl.espressif.com/dl/package_esp32_index.json
-```
+    ```https://dl.espressif.com/dl/package_esp32_index.json```
 
     Go to Tools > Board > Boards Manager. Search for "ESP32" and install the "esp32" package by Espressif Systems.
 
@@ -61,7 +60,8 @@ Note: During normal operation, the ESP32-CAM module requires a stable 5V power s
 
     In the CameraWebServer.ino sketch, locate the section with multiple camera configurations. Uncomment the appropriate configuration for the AI Thinker ESP32-CAM module:
 
-    ```#elif defined(CAMERA_MODEL_AI_THINKER)
+  ```
+    #elif defined(CAMERA_MODEL_AI_THINKER)
         #define PWDN_GPIO_NUM    32
         #define RESET_GPIO_NUM   -1
         #define XCLK_GPIO_NUM     0
@@ -78,7 +78,8 @@ Note: During normal operation, the ESP32-CAM module requires a stable 5V power s
         #define VSYNC_GPIO_NUM   25
         #define HREF_GPIO_NUM    23
         #define PCLK_GPIO_NUM    22
-        ```
+
+    ```
 
 
     Double-check that the selected board, upload speed, and port are correct in the Tools menu.
