@@ -79,8 +79,8 @@ Note: During normal operation, the ESP32-CAM module requires a stable 5V power s
         #define VSYNC_GPIO_NUM   25
         #define HREF_GPIO_NUM    23
         #define PCLK_GPIO_NUM    22
-
-    ```
+```
+  
 
 
     Double-check that the selected board, upload speed, and port are correct in the Tools menu.
