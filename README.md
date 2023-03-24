@@ -37,6 +37,7 @@ Follow these steps to set up the hardware connections for the ESP32-CAM module:
     Connect the FTDI programmer to your computer using a Micro-USB cable.
 
 Note: During normal operation, the ESP32-CAM module requires a stable 5V power supply. If you encounter issues during normal operation, consider using an external 5V power supply instead of powering the module through the FTDI programmer.
+
 3. Software Setup
 
     Install the Arduino IDE on your computer.
